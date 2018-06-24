@@ -10,8 +10,7 @@ const users = require('./user');
 
 server.addService(user.UserService.service, {
     GetUserById: getUserById,
-    GetAll: getAll,
-    UploadFile: uploadFile
+    GetAll: getAll
 });
 
 server.bind("0.0.0.0:9000", grpc.ServerCredentials.createInsecure());

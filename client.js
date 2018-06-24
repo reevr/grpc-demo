@@ -18,10 +18,6 @@ switch(option)  {
         getAll(client);
         break;
     }
-    case 3: {
-        uploadFile(client);
-        break;
-    }
 }
 
 
