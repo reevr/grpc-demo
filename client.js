@@ -22,7 +22,7 @@ switch(option)  {
 
 
 function getUserById(client) {
-    client.getUserById({ id: 123 },  md,  (err, response) => {
+    client.getUserById({ id: 123 },  (err, response) => {
         if (err) {
             console.log(err);
         }  else {
