@@ -32,8 +32,3 @@ function getUserById(call, callback) {
         user: user
     });
 }
-
-function uploadFile(call) {
-    console.log('received data');
-    call.on('data', (data) => call.write(data));
-}

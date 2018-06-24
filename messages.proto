@@ -28,5 +28,4 @@ message GetAllRequest {}
 service UserService {
     rpc GetUserById (GetUserByIdRequest) returns (UserResponse);
     rpc GetAll (GetAllRequest) returns (stream UserResponse);
-    rpc UploadFile (stream FileResponse) returns (stream FileResponse);
 }

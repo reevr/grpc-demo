@@ -26,7 +26,6 @@ switch(option)  {
 
 
 function getUserById(client) {
-    const md = grpc.Metadata({hj : 'dfsfdsfsd'});
     client.getUserById({ id: 123 },  md,  (err, response) => {
         if (err) {
             console.log(err);
@@ -45,11 +44,4 @@ function getAll(client) {
     call.on('end', () => {
         console.log('data streaming from server completed');
     });
-}
-
-function uploadFile(client) {
-    const call = client.uploadFile();
-    call.on('data', (data) => console.log(data));
-    users.forEach(u => call.write(u));
-    call.on('end', () => console.log('data streaming ended from server'));
 }
