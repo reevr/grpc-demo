@@ -1,0 +1,32 @@
+
+syntax = "proto3";
+
+package user;
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+}
+
+
+message GetUserByIdRequest {
+    int32 id = 1;
+}
+
+message UserResponse {
+    User user = 1;
+}
+
+message FileResponse {
+    User user = 1;
+}
+
+message GetAllRequest {}
+
+
+service UserService {
+    rpc GetUserById (GetUserByIdRequest) returns (UserResponse);
+    rpc GetAll (GetAllRequest) returns (stream UserResponse);
+    rpc UploadFile (stream FileResponse) returns (stream FileResponse);
+}
